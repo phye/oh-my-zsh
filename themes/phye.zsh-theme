@@ -1,10 +1,13 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="white"; fi
 
-if [[ $COLUMNS -lt 150 ]]; then
-    prompt_host=""
+prompt_host=""
+case $(ps -o comm= -p $PPID) in
+    sshd|*/sshd)  prompt_host="@%m";;
+esac
+
+if [[ $COLUMNS -lt 80 ]]; then
     date=""
 else
-    prompt_host="@%m"
     date="%D"
 fi
 
