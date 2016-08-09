@@ -4,7 +4,6 @@ if [[ $COLUMNS -lt 150 ]]; then
     prompt_host=""
     date=""
 else
-    echo $COLUMNS
     prompt_host="@%m"
     date="%D"
 fi
