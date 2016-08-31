@@ -11,7 +11,11 @@ else
     date="%D"
 fi
 
-PROMPT='%{$fg[$NCOLOR]%}%B%n$prompt_host%b%{$reset_color%}:%{$fg[blue]%}%B%c/%b%{$reset_color%} $(git_prompt_info)%(!.#.$) '
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+
+PROMPT='$(virtualenv_info)%{$fg[$NCOLOR]%}%B%n$prompt_host%b%{$reset_color%}:%{$fg[blue]%}%B%c/%b%{$reset_color%} $(git_prompt_info)%(!.#.$) '
 RPROMPT='[$date %*]'
 
 # git theming
