@@ -1,4 +1,4 @@
-if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="white"; fi
+if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="blue"; fi
 
 prompt_host=""
 case $(ps -o comm= -p $PPID) in
