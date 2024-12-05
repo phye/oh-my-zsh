@@ -194,7 +194,7 @@ function _build_kubectl_out_alias {
   compdef _$1 $1
 }
 
-_build_kubectl_out_alias "kj"  'kubectl "$@" -o json | jq'
+_build_kubectl_out_alias "kj"  'kubectl "$@" -o json | json - '
 _build_kubectl_out_alias "kjx" 'kubectl "$@" -o json | fx'
-_build_kubectl_out_alias "ky"  'kubectl "$@" -o yaml | yh'
+_build_kubectl_out_alias "ky"  'kubectl "$@" -o yaml | yaml -'
 unfunction _build_kubectl_out_alias
